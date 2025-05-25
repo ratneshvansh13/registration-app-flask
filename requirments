@@ -1,1 +1,2 @@
-Flask==2.3.3
+Flask==2.3
+Flask-MySQLdb==1.0
