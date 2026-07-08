@@ -6,7 +6,7 @@ app = Flask(__name__)
 # MySQL configurations
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '12345'
+app.config['MYSQL_PASSWORD'] = 'root@123'
 app.config['MYSQL_DB'] = 'mydatabase'
 
 mysql = MySQL(app)
@@ -20,4 +20,4 @@ def get_users():
     return jsonify(results)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

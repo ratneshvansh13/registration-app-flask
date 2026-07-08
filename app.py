@@ -4,10 +4,10 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 # MySQL Configuration
-app.config['MYSQL_HOST'] = 'localhost'  # Change if your MySQL server is on a different host
-app.config['MYSQL_USER'] = 'your_username'  # Replace with your MySQL username
-app.config['MYSQL_PASSWORD'] = 'your_password'  # Replace with your MySQL password
-app.config['MYSQL_DB'] = 'flask_registration'
+app.config['MYSQL_HOST'] = 'mysql'  # Change if your MySQL server is on a different host
+app.config['MYSQL_USER'] = 'root'  # Replace with your MySQL username
+app.config['MYSQL_PASSWORD'] = 'root@123'  # Replace with your MySQL password
+app.config['MYSQL_DB'] = 'python_db'
 
 mysql = MySQL(app)
 
@@ -38,4 +38,4 @@ def submit_registration():
         return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
